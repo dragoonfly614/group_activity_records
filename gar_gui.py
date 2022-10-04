@@ -56,6 +56,7 @@ def group_click(event):
     if group_edit_flag:
         event.widget.grid_forget()
         buttons.append(tk.Button(frame_2,text = event.widget.cget('text'), width = 10))
+        buttons[-1].bind('<Button-1>', onclick)
         buttons[-1].grid(row = (len(buttons)- 1) // 3 + 1, column = (len(buttons) - 1) % 3 + 1)
         remove_group(event.widget.cget('text'), sheet, my_excel_file, excel_path)
 
